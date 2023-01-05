@@ -16,7 +16,7 @@ class Card:
     self.rank = rank
 
 class Blackjack:
-  def __init__(self, players, dealer):
+  def __init__(self, players=[], dealer):
   # Define the suits and ranks of the deck
     suits = ["hearts", "diamonds", "spades", "clubs"]
     ranks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"]
@@ -31,6 +31,10 @@ class Blackjack:
     # Shuffle the deck
     import random
     random.shuffle(self.deck)
+    
+    # Add players from list
+    newplayer = input("enter new player")
+    players.append(newplayer)
     
     # Deal the cards to the player and the dealer
     for player in players:
