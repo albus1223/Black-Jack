@@ -45,3 +45,13 @@ class Blackjack:
     dealer.hand = []
     dealer.hand.append(self.deck.pop())
     dealer.hand.append(self.deck.pop())
+    
+    # Begin the game
+    for player in players:
+      print(player.hand)
+      hit_stay = input("Hit (h) or Stay (s)?")
+      if hit_stay == "h":
+        player.hand.append(self.deck.pop())
+        print(player.hand)
+      if hit_stay == "s":
+        pass
