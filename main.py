@@ -47,20 +47,21 @@ class Blackjack:
     dealer.hand.append(self.deck.pop())
     
     # Begin the game
-    for player in players:
-      count = 0
-      print(player.hand)
-      hit_stay = input("Hit (h) or Stay (s)?")
-      if hit_stay == "h":
-        player.hand.append(self.deck.pop())
-        print(player.hand)
-        for i in player.hand:
-          count += Card.rank
-        if count>21:
-          print("game over")
-          break
-        elif count == 21:
-          print("21")
-          continue
-      if hit_stay == "s":
-        pass
+    while True:
+      for player in players:
+       count = 0
+       print(player.hand)
+        hit_stay = input("Hit (h) or Stay (s)?")
+        if hit_stay == "h":
+          player.hand.append(self.deck.pop())
+          print(player.hand)
+          for i in player.hand:
+            count += Card.rank
+          if count>21:
+            print("game over")
+            break
+          elif count == 21:
+            print("21")
+            continue
+        elif hit_stay == "s":
+         pass
