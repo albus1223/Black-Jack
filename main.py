@@ -63,7 +63,10 @@ class Blackjack:
           player.hand.append(self.deck.pop())
           print(player.hand)
           for i in player.hand:
-            count += Card.rank
+            if Card.rank in ["Jack","Queen","King"]:
+              count += 10
+            elif Card.rank == "Ace":
+              
           if count>21:
             print("game over")
             break
